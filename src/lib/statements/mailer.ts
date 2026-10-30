@@ -37,6 +37,14 @@ export function emailIsConfigured(): boolean {
   }
 }
 
+/** Splits `FairShare <me@example.com>` into a display name and the bare address; a plain address has no name. */
+export function parseSender(value: string): { name?: string; email: string } {
+  const match = /^\s*"?([^"<]*?)"?\s*<\s*([^<>\s]+)\s*>\s*$/.exec(value);
+  if (!match) return { email: value.trim() };
+  const name = match[1].trim();
+  return name ? { name, email: match[2] } : { email: match[2] };
+}
+
 function toBase64(bytes: Uint8Array): string {
   let binary = '';
   const chunk = 0x8000;
@@ -77,7 +85,7 @@ export async function sendEmails(emails: OutgoingEmail[]): Promise<{ sent: numbe
     for (const email of emails) {
       try {
         await mailer.send({
-          from: config.from,
+          from: parseSender(config.from),
           to: email.to,
           subject: email.subject,
           text: email.text,
