@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+coverage/
+*.log
+.DS_Store
+.dev.vars
+.open-next/
+.wrangler/
+
+# TypeScript incremental build cache
+*.tsbuildinfo

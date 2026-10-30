@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fairshare",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-23",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "fairshare"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 5 * * *"]
+  },
+  "vars": {
+    "NEXTJS_ENV": "production"
+  }
+}

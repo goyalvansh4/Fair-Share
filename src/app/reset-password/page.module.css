@@ -1,0 +1,15 @@
+.page{display:grid;min-height:100vh;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 20%,#f0edff 0,transparent 42%),#f7f8fb;color:#292b40}
+.card{width:min(100%,440px);padding:34px;border:1px solid #e9ebf1;border-radius:16px;background:#fff;box-shadow:0 18px 60px #25204b0b}
+.mark{display:grid;width:42px;height:42px;place-items:center;margin-bottom:25px;border-radius:13px;background:#6d5ce8;color:#fff}
+.eyebrow{color:#7668d9;font-size:9px;font-weight:750;letter-spacing:1.3px}
+.card h1{margin:10px 0;color:#292b40;font-size:27px;letter-spacing:-.9px}
+.card>p{margin:0 0 21px;color:#85899a;font-size:11px;line-height:1.7}
+.form{display:grid;gap:14px}
+.form label{display:grid;gap:7px;color:#47495b;font-size:10px;font-weight:650}
+.form label span{display:flex;align-items:center;gap:9px;height:42px;padding:0 11px;border:1px solid #e4e6ed;border-radius:8px;color:#969aaa}
+.form input{width:100%;height:100%;border:0;outline:0;background:transparent;color:#33364a;font:inherit;font-weight:450}
+.action{display:flex;align-items:center;justify-content:center;gap:8px;min-height:42px;margin-top:3px;border:0;border-radius:8px;background:#6d5ce8;color:#fff;font-size:10px;font-weight:700}
+.action:disabled{opacity:.65}
+.error{margin:0;padding:10px;border-radius:7px;background:#fff1ef;color:#a63d35;font-size:10px}
+.spinner{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
